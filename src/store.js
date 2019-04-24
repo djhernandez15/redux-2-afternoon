@@ -1,10 +1,12 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import promiseMiddleware from "redux-promise-middleware";
 import budgetReducer from "./ducks/budgetReducer";
+import userReducer from './ducks/userReducer'
 
 const rootReducer = combineReducers({
-  budget: budgetReducer
+  budget: budgetReducer,
+  user: userReducer
 });
 
-let store = createStore(rootReducer, applyMiddleware(promiseMiddleware));
-export default store;
+export default createStore(rootReducer, applyMiddleware(promiseMiddleware));
+
